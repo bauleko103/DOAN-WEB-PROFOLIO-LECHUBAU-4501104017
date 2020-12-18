@@ -1,0 +1,59 @@
+﻿@model IEnumerable<NATURALLIFE.Models.CHANTRANG>
+
+@{
+    ViewBag.Title = "FOOTVIEW";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i>LOGO VÀ NỘI DUNG CHÂN TRANG</h3>
+        <div class="col-lg-5">
+            <div class="content-panel">
+                
+                <img src="~/ContentWebmaster/img/FOOTVIEW.png" style="width:100%;" />
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+
+
+
+            <!-- /row -->
+            <div class="col-lg-7">
+                <div class="content-panel">
+                    <button class="btn btn-success btn-primary">
+                        <i class="fa fa-check"></i>
+                        @Html.ActionLink("EDIT", "FOOTEDIT", new { id = item.ID })
+                    </button>
+                    <h4><i class="fa fa-dashboard"></i>CHỈNH SỬA NỘI DUNG LOGO CUỐI TRANG</h4>
+
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td class="col-lg-2">LOGO</td>
+                                    <td class="col-lg-10">
+                                        <img src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANHLOGO)" style="width:160px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">NỘI DUNG</td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.Raw(item.NOIDUNG)</p>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                <!-- /content-panel -->
+            </div>
+            <!-- /row -->
+
+        }
+    </section>
+    <!-- /wrapper -->
+</section>
+

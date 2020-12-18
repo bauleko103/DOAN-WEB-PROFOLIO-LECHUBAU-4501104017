@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BAULEPROFOLIOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CHANTRANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="NOIDUNG" Type="ntext" />
+          <Property Name="HINHANHLOGO" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="DSKHACHHANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="TENKH" Type="nvarchar" MaxLength="200" />
+          <Property Name="GMAIL" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="HOME">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="HINHANHNEN" Type="nvarchar" MaxLength="200" />
+          <Property Name="TUADE1" Type="nvarchar" MaxLength="200" />
+          <Property Name="TUADE2" Type="nvarchar" MaxLength="200" />
+          <Property Name="TUADE3" Type="nvarchar" MaxLength="200" />
+          <Property Name="TENNUT" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="LIENHE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="TUADE" Type="nvarchar" MaxLength="200" />
+          <Property Name="HOTLINE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ADDRESSS" Type="nvarchar" MaxLength="50" />
+          <Property Name="PHONE" Type="nvarchar" MaxLength="200" />
+          <Property Name="FAX" Type="nchar" MaxLength="200" />
+          <Property Name="WEB" Type="nvarchar" MaxLength="200" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="200" />
+          <Property Name="TUADECHANTRANG" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="LOGOKHACHHANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="HINHANH" Type="nvarchar" MaxLength="200" />
+          <Property Name="LINKLOGO" Type="nvarchar" MaxLength="200" />
+          <Property Name="TENLOGO" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="MUCLINK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="200" />
+          <Property Name="PHONE" Type="nvarchar" MaxLength="200" />
+          <Property Name="LINKFB" Type="nvarchar" MaxLength="200" />
+          <Property Name="LINKPRIN" Type="nvarchar" MaxLength="200" />
+          <Property Name="LINKTWI" Type="nvarchar" MaxLength="200" />
+          <Property Name="LINKINS" Type="nvarchar" MaxLength="200" />
+          <Property Name="LINKYB" Type="nvarchar" MaxLength="200" />
+          <Property Name="LINKINK" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="PHOTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="SOTHUTU" Type="nvarchar" MaxLength="50" />
+          <Property Name="HINHANH" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="IDTAIKHOAN" />
+          </Key>
+          <Property Name="IDTAIKHOAN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASS" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="THELOAITHUVIEN">
+          <Key>
+            <PropertyRef Name="IDTHELOAI" />
+          </Key>
+          <Property Name="IDTHELOAI" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="THELOAIANH" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="THELOAITINTUC">
+          <Key>
+            <PropertyRef Name="IDTHELOAI" />
+          </Key>
+          <Property Name="IDTHELOAI" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TENTHELOAI" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="THUVIENANH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="IDTHELOAI" Type="nvarchar" MaxLength="200" />
+          <Property Name="HINHANH" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TINTUC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="IDTHELOAI" Type="nvarchar" MaxLength="100" />
+          <Property Name="TIEUDE" Type="nvarchar" MaxLength="100" />
+          <Property Name="NOIDUNGPHU" Type="nvarchar" MaxLength="200" />
+          <Property Name="HINHANH" Type="nvarchar" MaxLength="200" />
+          <Property Name="NOIDUNGCHINH" Type="ntext" />
+          <Property Name="NGAYTHANG" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="TRANGMODEL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="TUADE" Type="nvarchar" MaxLength="100" />
+          <Property Name="HINHANH" Type="nvarchar" MaxLength="200" />
+          <Property Name="NOIDUNG" Type="ntext" />
+        </EntityType>
+        <Association Name="FK_THUVIENANH_THELOAITHUVIEN">
+          <End Role="THELOAITHUVIEN" Type="Self.THELOAITHUVIEN" Multiplicity="0..1" />
+          <End Role="THUVIENANH" Type="Self.THUVIENANH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THELOAITHUVIEN">
+              <PropertyRef Name="IDTHELOAI" />
+            </Principal>
+            <Dependent Role="THUVIENANH">
+              <PropertyRef Name="IDTHELOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TINTUC_THELOAITINTUC">
+          <End Role="THELOAITINTUC" Type="Self.THELOAITINTUC" Multiplicity="0..1" />
+          <End Role="TINTUC" Type="Self.TINTUC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THELOAITINTUC">
+              <PropertyRef Name="IDTHELOAI" />
+            </Principal>
+            <Dependent Role="TINTUC">
+              <PropertyRef Name="IDTHELOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BAULEPROFOLIOModelStoreContainer">
+          <EntitySet Name="CHANTRANG" EntityType="Self.CHANTRANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DSKHACHHANG" EntityType="Self.DSKHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOME" EntityType="Self.HOME" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LIENHE" EntityType="Self.LIENHE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGOKHACHHANG" EntityType="Self.LOGOKHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MUCLINK" EntityType="Self.MUCLINK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHOTO" EntityType="Self.PHOTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THELOAITHUVIEN" EntityType="Self.THELOAITHUVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THELOAITINTUC" EntityType="Self.THELOAITINTUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THUVIENANH" EntityType="Self.THUVIENANH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TINTUC" EntityType="Self.TINTUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANGMODEL" EntityType="Self.TRANGMODEL" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_THUVIENANH_THELOAITHUVIEN" Association="Self.FK_THUVIENANH_THELOAITHUVIEN">
+            <End Role="THELOAITHUVIEN" EntitySet="THELOAITHUVIEN" />
+            <End Role="THUVIENANH" EntitySet="THUVIENANH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TINTUC_THELOAITINTUC" Association="Self.FK_TINTUC_THELOAITINTUC">
+            <End Role="THELOAITINTUC" EntitySet="THELOAITINTUC" />
+            <End Role="TINTUC" EntitySet="TINTUC" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BAULEPROFOLIOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CHANTRANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HINHANHLOGO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DSKHACHHANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENKH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HOME">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HINHANHNEN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TUADE1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TUADE2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TUADE3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TENNUT" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LIENHE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TUADE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HOTLINE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESSS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="WEB" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TUADECHANTRANG" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LOGOKHACHHANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HINHANH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LINKLOGO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TENLOGO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MUCLINK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LINKFB" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LINKPRIN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LINKTWI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LINKINS" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LINKYB" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LINKINK" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PHOTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SOTHUTU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HINHANH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="IDTAIKHOAN" />
+          </Key>
+          <Property Name="IDTAIKHOAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="THELOAITHUVIEN">
+          <Key>
+            <PropertyRef Name="IDTHELOAI" />
+          </Key>
+          <Property Name="IDTHELOAI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="THELOAIANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="THUVIENANHs" Relationship="Self.FK_THUVIENANH_THELOAITHUVIEN" FromRole="THELOAITHUVIEN" ToRole="THUVIENANH" />
+        </EntityType>
+        <EntityType Name="THELOAITINTUC">
+          <Key>
+            <PropertyRef Name="IDTHELOAI" />
+          </Key>
+          <Property Name="IDTHELOAI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TENTHELOAI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TINTUCs" Relationship="Self.FK_TINTUC_THELOAITINTUC" FromRole="THELOAITINTUC" ToRole="TINTUC" />
+        </EntityType>
+        <EntityType Name="THUVIENANH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTHELOAI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HINHANH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="THELOAITHUVIEN" Relationship="Self.FK_THUVIENANH_THELOAITHUVIEN" FromRole="THUVIENANH" ToRole="THELOAITHUVIEN" />
+        </EntityType>
+        <EntityType Name="TINTUC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTHELOAI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TIEUDE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNGPHU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HINHANH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNGCHINH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYTHANG" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="THELOAITINTUC" Relationship="Self.FK_TINTUC_THELOAITINTUC" FromRole="TINTUC" ToRole="THELOAITINTUC" />
+        </EntityType>
+        <EntityType Name="TRANGMODEL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TUADE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HINHANH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_THUVIENANH_THELOAITHUVIEN">
+          <End Role="THELOAITHUVIEN" Type="Self.THELOAITHUVIEN" Multiplicity="0..1" />
+          <End Role="THUVIENANH" Type="Self.THUVIENANH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THELOAITHUVIEN">
+              <PropertyRef Name="IDTHELOAI" />
+            </Principal>
+            <Dependent Role="THUVIENANH">
+              <PropertyRef Name="IDTHELOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TINTUC_THELOAITINTUC">
+          <End Role="THELOAITINTUC" Type="Self.THELOAITINTUC" Multiplicity="0..1" />
+          <End Role="TINTUC" Type="Self.TINTUC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THELOAITINTUC">
+              <PropertyRef Name="IDTHELOAI" />
+            </Principal>
+            <Dependent Role="TINTUC">
+              <PropertyRef Name="IDTHELOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BAULEPROFOLIOEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CHANTRANGs" EntityType="Self.CHANTRANG" />
+          <EntitySet Name="DSKHACHHANGs" EntityType="Self.DSKHACHHANG" />
+          <EntitySet Name="HOMEs" EntityType="Self.HOME" />
+          <EntitySet Name="LIENHEs" EntityType="Self.LIENHE" />
+          <EntitySet Name="LOGOKHACHHANGs" EntityType="Self.LOGOKHACHHANG" />
+          <EntitySet Name="MUCLINKs" EntityType="Self.MUCLINK" />
+          <EntitySet Name="Photos" EntityType="Self.PHOTO" />
+          <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
+          <EntitySet Name="THELOAITHUVIENs" EntityType="Self.THELOAITHUVIEN" />
+          <EntitySet Name="THELOAITINTUCs" EntityType="Self.THELOAITINTUC" />
+          <EntitySet Name="THUVIENANHs" EntityType="Self.THUVIENANH" />
+          <EntitySet Name="TINTUCs" EntityType="Self.TINTUC" />
+          <EntitySet Name="TRANGMODELs" EntityType="Self.TRANGMODEL" />
+          <AssociationSet Name="FK_THUVIENANH_THELOAITHUVIEN" Association="Self.FK_THUVIENANH_THELOAITHUVIEN">
+            <End Role="THELOAITHUVIEN" EntitySet="THELOAITHUVIENs" />
+            <End Role="THUVIENANH" EntitySet="THUVIENANHs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TINTUC_THELOAITINTUC" Association="Self.FK_TINTUC_THELOAITINTUC">
+            <End Role="THELOAITINTUC" EntitySet="THELOAITINTUCs" />
+            <End Role="TINTUC" EntitySet="TINTUCs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BAULEPROFOLIOModelStoreContainer" CdmEntityContainer="BAULEPROFOLIOEntities2">
+          <EntitySetMapping Name="CHANTRANGs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.CHANTRANG">
+              <MappingFragment StoreEntitySet="CHANTRANG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="HINHANHLOGO" ColumnName="HINHANHLOGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DSKHACHHANGs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.DSKHACHHANG">
+              <MappingFragment StoreEntitySet="DSKHACHHANG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+                <ScalarProperty Name="GMAIL" ColumnName="GMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOMEs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.HOME">
+              <MappingFragment StoreEntitySet="HOME">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HINHANHNEN" ColumnName="HINHANHNEN" />
+                <ScalarProperty Name="TUADE1" ColumnName="TUADE1" />
+                <ScalarProperty Name="TUADE2" ColumnName="TUADE2" />
+                <ScalarProperty Name="TUADE3" ColumnName="TUADE3" />
+                <ScalarProperty Name="TENNUT" ColumnName="TENNUT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LIENHEs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.LIENHE">
+              <MappingFragment StoreEntitySet="LIENHE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TUADE" ColumnName="TUADE" />
+                <ScalarProperty Name="HOTLINE" ColumnName="HOTLINE" />
+                <ScalarProperty Name="ADDRESSS" ColumnName="ADDRESSS" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="WEB" ColumnName="WEB" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="TUADECHANTRANG" ColumnName="TUADECHANTRANG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOGOKHACHHANGs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.LOGOKHACHHANG">
+              <MappingFragment StoreEntitySet="LOGOKHACHHANG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+                <ScalarProperty Name="LINKLOGO" ColumnName="LINKLOGO" />
+                <ScalarProperty Name="TENLOGO" ColumnName="TENLOGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUCLINKs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.MUCLINK">
+              <MappingFragment StoreEntitySet="MUCLINK">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="LINKFB" ColumnName="LINKFB" />
+                <ScalarProperty Name="LINKPRIN" ColumnName="LINKPRIN" />
+                <ScalarProperty Name="LINKTWI" ColumnName="LINKTWI" />
+                <ScalarProperty Name="LINKINS" ColumnName="LINKINS" />
+                <ScalarProperty Name="LINKYB" ColumnName="LINKYB" />
+                <ScalarProperty Name="LINKINK" ColumnName="LINKINK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photos">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.PHOTO">
+              <MappingFragment StoreEntitySet="PHOTO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SOTHUTU" ColumnName="SOTHUTU" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAIKHOANs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.TAIKHOAN">
+              <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="IDTAIKHOAN" ColumnName="IDTAIKHOAN" />
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THELOAITHUVIENs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.THELOAITHUVIEN">
+              <MappingFragment StoreEntitySet="THELOAITHUVIEN">
+                <ScalarProperty Name="IDTHELOAI" ColumnName="IDTHELOAI" />
+                <ScalarProperty Name="THELOAIANH" ColumnName="THELOAIANH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THELOAITINTUCs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.THELOAITINTUC">
+              <MappingFragment StoreEntitySet="THELOAITINTUC">
+                <ScalarProperty Name="IDTHELOAI" ColumnName="IDTHELOAI" />
+                <ScalarProperty Name="TENTHELOAI" ColumnName="TENTHELOAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THUVIENANHs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.THUVIENANH">
+              <MappingFragment StoreEntitySet="THUVIENANH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDTHELOAI" ColumnName="IDTHELOAI" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TINTUCs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.TINTUC">
+              <MappingFragment StoreEntitySet="TINTUC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDTHELOAI" ColumnName="IDTHELOAI" />
+                <ScalarProperty Name="TIEUDE" ColumnName="TIEUDE" />
+                <ScalarProperty Name="NOIDUNGPHU" ColumnName="NOIDUNGPHU" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+                <ScalarProperty Name="NOIDUNGCHINH" ColumnName="NOIDUNGCHINH" />
+                <ScalarProperty Name="NGAYTHANG" ColumnName="NGAYTHANG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANGMODELs">
+            <EntityTypeMapping TypeName="BAULEPROFOLIOModel.TRANGMODEL">
+              <MappingFragment StoreEntitySet="TRANGMODEL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TUADE" ColumnName="TUADE" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

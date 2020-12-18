@@ -1,0 +1,202 @@
+﻿@{
+    ViewBag.Title = "Natural Life";
+}
+
+  
+<header class="init">
+    <!-- subnav -->
+    <div class="subnav">
+        <div class="container">
+            <div class="row">
+
+                @Html.Action("LINKPAGETOP")
+
+            </div>
+        </div>
+    </div>
+    <!-- subnav end -->
+    <!-- nav -->
+    <div class="navbar-default-white navbar-fixed-top">
+        <!-- container -->
+        <div class="container">
+            <div class="row">
+
+                <!-- menu mobile display -->
+                <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+
+                <!-- logo -->
+                <a class="navbar-brand white" href="@Url.Action("Index","Home")">
+                    <img class="white" alt="logo" src="../Content/img/LOGOBIG-01.png">
+                    <img class="black" alt="logo" src="../Content/img/LOGOBIG-01.png">
+                </a>
+                <!-- logo end -->
+                <!-- mainmenu start -->
+                <div class="white menu-init" id="main-menu">
+                    <nav id="menu-center">
+                        <ul>
+                            <li>
+                                <a class="actived" href="#home">HOME</a>
+                            </li>
+                            <li>
+                                <a href="#model">MODEL</a>
+                            </li>
+                            <li>
+                                <a href="#gallary">GALLARY</a>
+                            </li>
+                            <li>
+                                <a href="#blog">BLOG</a>
+                            </li>
+                            <li>
+                                <a href="#contact">CONTACT</a>
+                            </li>
+                            <li>
+                                <a class="btn-book-menu popup-form" href="@Url.Action("NHANTHONGTIN","Home")">BOOK NOW</a>
+                            </li>
+                            @*<li>
+                                <a class="btn-book-menu popup-form" href="@Url.Action("Login","Webmaster")">ADMIN</a>
+                            </li>*@
+                        </ul>
+                    </nav>
+                </div>
+                <!-- mainmenu end -->
+
+            </div>
+        </div>
+        <!-- container end-->
+    </div>
+    <!-- nav end -->
+</header>
+<!-- home -->
+
+@Html.Action("HOME")
+
+
+
+<section class="whitepage" id="model">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h2>
+                        MODEL
+                    </h2>
+                    <span class="devider-center"></span>
+                </div>
+            </div>
+
+            <!-- spacer -->
+            <div class="space-single"></div>
+            <!-- spacer -->
+
+            @Html.Action("MODEL")
+        </div>
+    </div>
+</section>
+
+
+
+<!-- section projects -->
+<section class="whitepage no-top" id="gallary" aria-label="projects">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- filter project -->
+            @Html.Action("TAGGALLARY")
+            <!-- filter project end -->
+            <!-- start gallery -->
+            <div class="no-gutter onStep" data-animation="fadeInUp" data-time="600" id="projects-wrap">
+                @Html.Action("GALLARY")
+                <!-- gallery end -->
+            </div>
+        </div>
+</section>
+<!-- section projects end -->
+<!-- whitepage   -->
+<section class="whitepage" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h2>RECENT POST</h2>
+                    <span class="devider-center"></span>
+                </div>
+            </div>
+            <!-- spacer -->
+            <div class="space-double"></div>
+            <!-- spacer -->
+            <div class="onStep" data-animation="fadeInUp" data-time="300">
+
+                <div class="owl-carousel" id="owl-post">
+                    @Html.Action("BLOG")
+
+                </div>
+            </div>
+</section>
+<!-- whitepage end -->
+
+<section id="brand" class="brand-page" aria-label="brands" style="background-image:url(../Content/img/22.jpg)">
+    <!-- brands-->
+    <div class="container">
+        <div class="row">
+
+            <div class="owl-carousel" id="owl-brand">
+
+                @Html.Action("LOGOCLIENT")
+
+            </div>
+
+        </div>
+    </div>
+    <!-- brands end-->
+</section>
+
+<!-- section contact -->
+<section aria-label="contact" class="whitepage" id="contact">
+    <div class="container">
+        <div class="row">
+
+            <!-- contact form -->
+
+            <div class="col-md-8 col-xs-12">
+                <h2>Please Fill your query below!</h2>
+
+                <!-- spacer -->
+                <div class="space-single"></div>
+
+                <div class="onStep" data-animation="fadeInUp" data-time="300" id="contact">
+                    <form action="#" class="row" id="form-contact" method="post" name="form-contact">
+                        
+                            <input id="name-contact" name="name" placeholder="your name" type="text">
+
+                            <input id="email-contact" name="email" placeholder="your e-mail" type="text">
+
+                            <textarea cols="50" id="message-contact" name="message" placeholder="your enquiry" rows="4"></textarea>
+                            <div class="success" id="mail_success">
+                                Thank you. Your message has been sent
+                            </div>
+
+                            <div class="error" id="mail_failed">
+                                Error, email not sent
+                            </div>
+                            <button class="btn-contact" id="send-contact" type="submit">Sent Now</button>
+                    </form>
+                </div>
+                <!-- spacer -->
+                <div class="space-single"></div>
+            </div>
+            <!-- contact form end -->
+            <!-- address -->
+            @Html.Action("CONTACTPAGE")
+            <!-- address end -->
+
+        </div>
+    </div>
+</section>
+
+

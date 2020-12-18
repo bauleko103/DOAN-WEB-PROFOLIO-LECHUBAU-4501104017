@@ -1,0 +1,82 @@
+﻿@model IEnumerable<NATURALLIFE.Models.HOME>
+
+@{
+    ViewBag.Title = "HOMEVIEW";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+
+@foreach (var item in Model)
+{
+   
+    <section id="main-content">
+        <section class="wrapper">
+            <!-- BASIC FORM ELELEMNTS -->
+            <h3><i class="fa fa-angle-right"></i>TRANG HOME</h3>
+            <!-- row -->
+            <div class="col-lg-5">
+                <div class="content-panel">
+                    @*<img src="~/Content/img/@Html.DisplayFor(modelItem => item.BGIMAGE)" style="width:100%;" />*@
+                    <img src="~/ContentWebmaster/img/HOMEVIEW.png" style="width:100%;" />
+                    
+                </div>
+                <!-- /col-md-12 -->
+            </div>
+            <!-- /row -->
+            <div class="col-lg-7">
+                <div class="content-panel">
+                    <button class="btn btn-success btn-primary">
+                        <i class="fa fa-check"></i>
+                        @Html.ActionLink("EDIT", "HOMEEDIT", new { id = item.ID })
+                    </button>
+                    <h4><i class="fa fa-dashboard"></i>CONTENT HOME</h4>
+
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td class="col-lg-2">TITLE 1</td>
+                                    <td class="col-lg-10">
+                                        <p>  @Html.DisplayFor(modelItem => item.TUADE1)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">TITLE 2 (show 1)</td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.TUADE2)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">TITLE 3 (show 2)</td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.TUADE3)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">BUTTON</td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.TENNUT)</p>
+                                        @*@Html.Raw(item.TENNUT)*@
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">BACKGROUND IMAGE</td>
+                                    <td class="col-lg-10">
+                                        <img src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANHNEN)" style="width:60px;" />
+                                        
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                <!-- /content-panel -->
+            </div>
+            <!-- /row -->
+        </section>
+        <!-- /wrapper -->
+    </section>
+}
+
+

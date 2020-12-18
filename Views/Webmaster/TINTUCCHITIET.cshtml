@@ -1,0 +1,72 @@
+﻿@model NATURALLIFE.Models.TINTUC
+
+@{
+    ViewBag.Title = "TINTUCCHITIET";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+<section id="main-content">
+    <section class="wrapper">
+        <!-- ADD-DEL -->
+        <h3>TRANG CHI TIẾT</h3>
+        <div class="col-lg-4">
+            <div class="content-panel">
+                <img src="~/Content/images-slider/img-slide-1.jpg" style="width:100%;" />
+            </div>
+        </div>
+        <div class="col-lg-8" style="padding:10px">
+            <div class="content-panel">
+                <section id="unseen">
+                    @*<button>@Html.CheckBox("isNewlyEnrolled", true)</button>*@
+                    <table class="table table-bordered table-striped table-condensed">
+                        <tbody>
+                            <tr>
+                                <td class="col-lg-4">THỂ LOẠI TIN TỨC </td>
+                                <td class="col-lg-8">
+                                    <a>@Html.DisplayFor(model => model.THELOAITINTUC.TENTHELOAI)</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-4">HÌNH ẢNH</td>
+                                <td class="col-lg-8">
+                                    <img src="~/ContentWebmaster/img/@Html.DisplayFor(model => model.HINHANH)" style="width:160px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-4">TIÊU ĐỀ </td>
+                                <td class="col-lg-8">
+                                    @Html.DisplayFor(model => model.TIEUDE)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-4">NÔI DUNG CHÍNH</td>
+                                <td class="col-lg-8">
+                                    @Html.Raw(Model.NOIDUNGCHINH)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-">THÁNG/NGÀY/NĂM GIỜ </td>
+                                <td class="col-lg-8">
+                                    @*@Html.DisplayFor(model => model.NGAYTHANG)*@
+                                    @Html.Raw(String.Format("{0:dd/MM/yyyy h:mm:ss tt}", Model.NGAYTHANG))
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="submit" class="btn btn-theme start" value="Create">
+                        <i class="glyphicon glyphicon-save"></i>
+                        <span>ADD</span>
+                    </button>
+                    <button type="button" class="btn btn-theme04 delete">
+                        <i class="glyphicon glyphicon-arrow-left"></i>
+                        <span>@Html.ActionLink("BACK", "TINTUCVIEW")</span>
+                    </button>
+                </section>
+            </div>
+        </div>
+            <br />
+
+
+            <!-- /row END -->
+    </section>
+    <!-- /wrapper -->
+</section>

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<NATURALLIFE.Models.TINTUC>
+
+
+
+
+@foreach (var item in Model)
+{
+    <div class="item">
+        <div class="recent-post" style="background-image:url(../ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH))">
+            <div class="hovereffect">
+                <a href="@Url.Action("BLOGDETAIL1", new { id = item.ID })">
+                    <div class="overlay ">
+                        <div class="content">
+                            <div class="heading">
+                                    @Html.DisplayFor(modelItem => item.TIEUDE)
+                                    <span class="devider-recent"></span>
+                            </div>
+                            <div class="subheading">@Html.DisplayFor(modelItem => item.NOIDUNGPHU)</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+ }

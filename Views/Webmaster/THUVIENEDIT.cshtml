@@ -1,0 +1,66 @@
+﻿@model NATURALLIFE.Models.THUVIENANH
+
+@{
+    ViewBag.Title = "THUVIENEDIT";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+
+@using (Html.BeginForm("THUVIENEDIT", "Webmaster", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <section id="main-content">
+        <section class="wrapper">
+            <!-- row -->
+            <div class="row mt">
+                <div class="col-md-12">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.ID)
+
+                    <div class="content-panel">
+
+                        <table class="table table-striped table-advance table-hover">
+
+                            <thead>
+                                <tr>
+                                    <th class="hidden-phone"><i class="fa "></i> @Html.DisplayNameFor(model => model.THELOAITHUVIEN.IDTHELOAI)</th>
+                                    <th class="hidden-phone"><i class="fa "></i>@Html.DisplayNameFor(model => model.HINHANH)</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        @Html.DropDownList("IDTHELOAI", null, htmlAttributes: new { @class = "form-control" })
+
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(model => model.HINHANH, new { @class = "form-control" })
+                                        <input type="file" name="HINHANHFile" />
+                                    </td>
+                                    <td>
+                                    </td>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <!-- /content-panel -->
+
+                    <button type="submit" class="btn btn-theme start">
+                        <i class="glyphicon glyphicon-save"></i>
+                        <span>Save</span>
+                    </button>
+                    <button type="button" class="btn btn-theme04 delete">
+                        <i class="glyphicon glyphicon-arrow-left"></i>
+                        <span>@Html.ActionLink("Back", "THUVIENVIEW")</span>
+                    </button>
+                </div>
+
+                <!-- /col-md-12 -->
+            </div>
+        </section>
+    </section>
+ }

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<NATURALLIFE.Models.PHOTO>
+
+
+@foreach (var item in Model)
+{
+    <a class="item-gallery-footer wrap-pic-w" href="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)" data-lightbox="gallery-footer">
+        <img src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)" alt="GALLERY">
+        
+    </a>
+}
+
+

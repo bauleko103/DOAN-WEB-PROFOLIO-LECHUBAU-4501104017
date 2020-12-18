@@ -1,0 +1,73 @@
+﻿@model NATURALLIFE.Models.CHANTRANG
+@{
+    ViewBag.Title = "FOOTEDIT";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+<script src="~/ContentWebmaster/ckeditor/ckeditor.js"></script>
+
+@using (Html.BeginForm("FOOTEDIT", "Webmaster", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ID)
+
+
+    <section id="main-content">
+        <section class="wrapper">
+            <!-- BASIC FORM ELELEMNTS -->
+            <!-- row -->
+            <div class="col-lg-4">
+                <div class="content-panel">
+                    @*<img src="~/Content/img/@Html.DisplayFor(modelItem => item.BGIMAGE)" style="width:100%;" />*@
+                    <img src="~/Content/images-slider/img-slide-1.jpg" style="width:100%;" />
+                    <!-- /content-panel -->
+                </div>
+                <!-- /col-md-12 -->
+            </div>
+            <!-- /row -->
+            <div class="col-lg-8">
+                <div class="content-panel">
+                    <h4><i class="fa fa-dashboard"></i>CHỈNH SỬA NỘI DUNG LOGO CUỐI TRANG</h4>
+
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td class="col-lg-2">HÌNH ẢNH LOGO</td>
+                                    <td class="col-lg-10">
+                                        @Html.LabelFor(model => model.HINHANHLOGO, new { @class = "form-control" })
+                                        <input type="file" name="HINHANHLOGOFile" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">NỘI DUNG</td>
+                                    <td class="col-lg-10">
+                                        @Html.TextAreaFor(model => model.NOIDUNG, new { @id = "FullDescription", @class = "form-control", @rows = "200" })
+                                        <script>
+                                            CKEDITOR.replace("FullDescription");
+                                        </script>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </section>
+                    <button type="submit" class="btn btn-theme start">
+                        <i class="glyphicon glyphicon-save"></i>
+                        <span>Save</span>
+                    </button>
+                    <button type="button" class="btn btn-theme04 delete">
+                        <i class="glyphicon glyphicon-arrow-left"></i>
+                        <span>@Html.ActionLink("BACK", "FOOTVIEW")</span>
+                    </button>
+                </div>
+                <!-- /content-panel -->
+            </div>
+            <!-- /row -->
+        </section>
+        <!-- /wrapper -->
+    </section>
+}

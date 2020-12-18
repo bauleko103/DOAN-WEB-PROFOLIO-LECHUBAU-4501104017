@@ -1,0 +1,21 @@
+﻿@model IEnumerable<NATURALLIFE.Models.LIENHE>
+
+@{
+    ViewBag.Title = "CONTACTFOOT";
+}
+
+@foreach (var item in Model)
+{
+    <h3>
+        @Html.DisplayFor(modelItem => item.TUADECHANTRANG)
+    </h3>
+
+    <address>
+        <span>@Html.DisplayFor(modelItem => item.ADDRESSS)</span> <span>PHONE:@Html.DisplayFor(modelItem => item.PHONE)</span>
+        <span>
+            EMAIL : <a href="@Html.DisplayFor(modelItem => item.EMAIL)">@Html.DisplayFor(modelItem => item.EMAIL)</a>
+        </span> <span>SITE : <a href="#">@Html.DisplayFor(modelItem => item.WEB)</a></span>
+    </address>
+    
+}
+

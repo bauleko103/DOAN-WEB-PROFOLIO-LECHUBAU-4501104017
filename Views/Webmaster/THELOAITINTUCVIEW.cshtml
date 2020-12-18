@@ -1,0 +1,103 @@
+﻿@model IEnumerable<NATURALLIFE.Models.THELOAITINTUC>
+
+@{
+    ViewBag.Title = "THELOAITINTUCVIEW";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+<script type="text/javascript">
+    function DELFILE() {
+        alert("Are you sure you want to DELETE?");
+    }
+</script>
+<section id="main-content">
+    <section class="wrapper">
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class="col-lg-6">
+            <div class="content-panel">
+                @*<img src="~/Content/img/@Html.DisplayFor(modelItem => item.BGIMAGE)" style="width:100%;" />*@
+                <img src="~/Content/images-slider/img-slide-1.jpg" style="width:100%;" />
+                <!-- /content-panel -->
+            </div>
+        </div>
+        <div style="margin:10px;">
+            <button class="btn btn-success btn-primary">
+                <i class="fa fa-check"></i>
+                @Html.ActionLink("ADD", "THELOAITINTUCADD")
+            </button>
+        </div>
+        <div class="col-lg-6">
+            <div class="content-panel">
+
+                <h4><i class="fa fa-dashboard"></i>THỂ LOẠI TIN TỨC</h4>
+
+
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="hidden-phone"><i class="fa"></i>THỂ LOẠI TIN TỨC </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="submit" class="btn btn-theme start" value="Create" style="margin:10px;">
+                                            <i class="glyphicon glyphicon-save"></i>
+                                            <span>@Html.ActionLink("EDIT", "THELOAITINTUCEDIT", new { id = item.IDTHELOAI })</span>
+                                        </button>
+                                    </td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.TENTHELOAI)</p>
+                                    </td>
+                                    <td>
+                                        <!---nút xoá-->
+                                        <div class="showback">
+                                            <!-- Button trigger modal -->
+                                            <button class="btn btn-danger btn-primary" data-toggle="modal" data-target="#myModal">
+                                                DELETE
+                                            </button>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h4 class="modal-title" id="myModalLabel">
+                                                                WARNING !
+                                                            </h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Are you sure you continue to delete this item?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-danger btn-primary">
+                                                                <i class="fa fa-trash-o "></i>@Html.ActionLink("DEL", "THELOAITINTUCDEL", new { id = item.IDTHELOAI })
+                                                            </button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- /kết thúc nút xoá -->
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        }
+                    </table>
+                </section>
+
+            </div>
+            <!-- /content-panel -->
+        </div>
+        <!-- /row -->
+    </section>
+    <!-- /wrapper -->
+</section>

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<NATURALLIFE.Models.LOGOKHACHHANG>
+
+@{
+    ViewBag.Title = "_LOGOCLIENT";
+}
+
+
+
+    @foreach (var item in Model)
+    {
+       <div class="item">
+            <img alt="background" src="../ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)" style="width:85px;">
+        </div>
+    }

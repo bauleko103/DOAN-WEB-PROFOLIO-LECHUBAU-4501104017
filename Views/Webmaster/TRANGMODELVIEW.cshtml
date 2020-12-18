@@ -1,0 +1,45 @@
+﻿@model IEnumerable<NATURALLIFE.Models.TRANGMODEL>
+
+@foreach (var item in Model)
+{
+    <div class="content-panel">
+        <div class="col-lg-10" style="margin:10px;">
+            <button class="btn btn-info btn-arrow">
+                @Html.ActionLink("EDIT", "MODELEDIT", new { id = item.ID })
+            </button>
+            @*<button class="btn btn-danger btn-primary">
+                    <i class="fa fa-trash-o "></i>
+                    @Html.ActionLink("DEL", "MODELDELETE", new { id = item.ID })
+              
+              </button>*@
+        </div>
+
+        <section id="unseen">
+            @*<button>@Html.CheckBox("isNewlyEnrolled", true)</button>*@
+            <table class="table table-bordered table-striped table-condensed">
+                <tbody>
+                    <tr>
+                        <td class="col-lg-2">TIÊU ĐỀ </td>
+                        <td class="col-lg-10">
+                            @Html.DisplayFor(modelItem => item.TUADE)
+                            @Html.ValidationMessageFor(modelItem => item.TUADE, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-2">NÔI DUNG </td>
+                        <td class="col-lg-10">
+                            @Html.Raw(item.NOIDUNG)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-2">HÌNH ẢNH</td>
+                        <td class="col-lg-10">
+                            <img src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)" style="width:80px;">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <br />
+}

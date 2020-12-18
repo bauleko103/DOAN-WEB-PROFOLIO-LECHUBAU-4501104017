@@ -1,0 +1,24 @@
+﻿@model IEnumerable<NATURALLIFE.Models.THUVIENANH>
+
+
+
+@foreach (var item in Model)
+{
+   
+    <div class="col-md-3 col-xs-12 item @Html.DisplayFor(modelItem => item.THELOAITHUVIEN.THELOAIANH)">
+        <div class="projects-grid big-img">
+            <a href="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)">
+                <div class="hovereffect">
+                    <img alt="imageportofolio" class="img-responsive" src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)">
+
+                    <div class="overlay">
+                        <div class="icon">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+}

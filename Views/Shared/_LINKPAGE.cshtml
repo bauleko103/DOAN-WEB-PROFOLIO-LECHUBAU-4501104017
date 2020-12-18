@@ -1,0 +1,12 @@
+﻿@model IEnumerable<NATURALLIFE.Models.MUCLINK>
+
+
+@foreach (var item in Model)
+{
+    <a href="@Html.DisplayFor(modelItem => item.LINKFB)"><span class="ti-facebook"></span></a>
+    <a href="@Html.DisplayFor(modelItem => item.LINKTWI)"><span class="ti-twitter"></span></a>
+    <a href="@Html.DisplayFor(modelItem => item.LINKINS)"><span class="ti-instagram"></span></a>
+    <a href="@Html.DisplayFor(modelItem => item.LINKYB)"><span class="ti-youtube"></span></a>
+}
+
+

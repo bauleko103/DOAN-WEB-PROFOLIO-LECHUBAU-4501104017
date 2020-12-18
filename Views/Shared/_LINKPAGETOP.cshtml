@@ -1,0 +1,31 @@
+﻿@model IEnumerable<NATURALLIFE.Models.MUCLINK>
+
+
+
+    @foreach (var item in Model)
+    {
+        
+        <div class="col-md-6">
+            <div class="left">
+                <div class="social-icons-subnav">
+                    <div><i class="ti-mobile"></i>@Html.DisplayFor(modelItem => item.PHONE)</div>
+                    <div><i class="ti-email"></i><a href="#">@Html.DisplayFor(modelItem => item.EMAIL)</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="right">
+                <div class="social-icons-subnav">
+                    <a href=" @Html.DisplayFor(modelItem => item.LINKFB)"><span class="ti-facebook"></span></a>
+                    <a href="@Html.DisplayFor(modelItem => item.LINKPRIN)"><span class="ti-printer"></span></a>
+                    <a href="@Html.DisplayFor(modelItem => item.LINKINK)"><span class="ti-linkedin"></span></a>
+                    <a href=" @Html.DisplayFor(modelItem => item.LINKYB)"><span class="ti-youtube"></span></a>
+                    <a><span ></span></a>
+                    <a href="@Url.Action("Login","Webmaster")"><span class="ti-user"> Login</span></a>
+
+                </div>
+            </div>
+        </div>
+    }
+

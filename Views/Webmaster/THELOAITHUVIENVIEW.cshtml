@@ -1,0 +1,63 @@
+﻿@model IEnumerable<NATURALLIFE.Models.THELOAITHUVIEN>
+
+@{
+    ViewBag.Title = "THELOAITHUVIENEDIT";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class="col-lg-6">
+            <div class="content-panel">
+                @*<img src="~/Content/img/@Html.DisplayFor(modelItem => item.BGIMAGE)" style="width:100%;" />*@
+                <img src="~/ContentWebmaster/img/GALLARYVIEW.png" style="width:100%;" />
+                <!-- /content-panel -->
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="content-panel">
+
+                <h4><i class="fa fa-dashboard"></i>THỂ LOẠI ẢNH</h4>
+                
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <button class="btn btn-success btn-primary">
+                            <i class="fa fa-check"></i>
+                            @Html.ActionLink("ADD", "THELOAITHUVIENADD")
+                        </button>
+                        <thead>
+                            <tr>
+                                <th class="hidden-phone"><i class="fa "></i>THỂ LOẠI ẢNH</th>
+                                <th class="hidden-phone"><i class="fa "></i>EDIT</th>
+
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+
+                            <tbody>
+                                <tr>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.THELOAIANH)</p>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-info btn-arrow" style="margin:5px;">
+                                            @Html.ActionLink("Edit", "THELOAITHUVIENEDIT", new { id = item.IDTHELOAI })
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        }
+                    </table>
+                </section>
+
+            </div>
+            <!-- /content-panel -->
+        </div>
+        <!-- /row -->
+    </section>
+    <!-- /wrapper -->
+</section>

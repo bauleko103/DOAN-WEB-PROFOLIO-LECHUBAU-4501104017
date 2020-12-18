@@ -1,0 +1,110 @@
+﻿@model IEnumerable<NATURALLIFE.Models.LOGOKHACHHANG>
+@{
+        ViewBag.Title = "CLIENTVIEW";
+        Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+
+
+    <section id="main-content">
+        <section class="wrapper">
+            <!-- BASIC FORM ELELEMNTS -->
+            <h3><i class="fa fa-angle-right"></i>TRANG LOGO KHÁCH HÀNG</h3>
+            <!-- row -->
+            @*<div class="col-lg-4">
+            <div class="content-panel">
+                <img src="~/Content/images-slider/img-slide-1.jpg" style="width:100%;" />
+            </div>
+            <div style="margin:10px;">
+                <button class="btn btn-success btn-primary">
+                    <i class="fa fa-check"></i>
+                    @Html.ActionLink("ADD", "CLIENTADD")
+                </button>
+            </div>
+        </div>*@
+            <div style="margin:10px;">
+                <button class="btn btn-success btn-primary">
+                    <i class="fa fa-check"></i>
+                    @Html.ActionLink("ADD", "CLIENTADD")
+                </button>
+            </div>
+            <!-- /row -->
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3" style="margin:20px;">
+                    <div class="content-panel">
+
+
+                        <section id="unseen">
+                            <table class="table table-bordered table-striped table-condensed">
+
+                                <tbody>
+                                    <tr>
+                                        <td class="col-lg-2">CHỈNH SỬA</td>
+                                        <td class="col-lg-10">
+                                            <button class="btn btn-info btn-arrow col-lg-3" style="margin:5px;">
+                                                @Html.ActionLink("EDIT", "CLIENTEDIT", new { id = item.ID })
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-lg-2">NAME LOGO</td>
+                                        <td class="col-lg-10">
+                                            <p>@Html.DisplayFor(modelItem => item.TENLOGO)</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-lg-2">HÌNH ẢNH LOGO</td>
+                                        <td class="col-lg-10">
+                                            <img src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)" style=" padding:10px; width:60px;" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-lg-2">LINK LOGO</td>
+                                        <td class="col-lg-10">
+                                            <p>@Html.DisplayFor(modelItem => item.LINKLOGO)</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-lg-2">XOÁ</td>
+                                        <td class="col-lg-10 showback">
+                                            <button class="btn btn-danger btn-primary" data-toggle="modal" data-target="#myModal">
+                                                DELETE
+                                            </button>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h3 class="modal-title" id="myModalLabel">
+                                                                WARNING !
+                                                            </h3>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h4>Are you sure you continue to delete this item?</h4>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-danger btn-primary" style="margin:5px;">
+                                                                <i class="fa fa-trash-o "></i>@Html.ActionLink("DEL", "CLIENTDEL", new { id = item.ID })
+                                                            </button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </section>
+                    </div>
+                    <!-- /content-panel -->
+                </div>
+            }
+            </div>
+        </section>
+        <!-- /wrapper -->
+    </section>

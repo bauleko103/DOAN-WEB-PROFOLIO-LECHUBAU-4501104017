@@ -1,0 +1,111 @@
+﻿@model NATURALLIFE.Models.TINTUC
+
+@{
+    ViewBag.Title = "TINTUCEDIT";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+<script src="~/ContentWebmaster/ckeditor/ckeditor.js"></script>
+@using (Html.BeginForm("TINTUCEDIT", "Webmaster", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <section id="main-content">
+        <section class="wrapper">
+            <!-- BASIC FORM ELELEMNTS -->
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ID)
+            <!-- row -->
+
+            <div class="col-lg-12">
+                <div class="content-panel">
+                    <h4><i class="fa fa-dashboard"></i> ADD MODEL</h4>
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tbody>
+                                @Html.ValidationSummary(true)
+                                <tr>
+                                    <td>THỂ LOẠI</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                @Html.DropDownList("IDTHELOAI", null, htmlAttributes: new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>TIÊU ĐỀ (vui lòng nhập dưới 30 kí tự)</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.TIEUDE, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.TIEUDE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>NỘI DUNG PHỤ (vui lòng nhập dưới 100 kí tự)</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.NOIDUNGPHU, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.NOIDUNGPHU, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>NỘI DUNG CHÍNH</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                @Html.TextAreaFor(model => model.NOIDUNGCHINH, new { @id = "FullDescription", @class = "form-control", @rows = "200" })
+                                                <script>
+                                                        CKEDITOR.replace("FullDescription");
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>THÁNG/NGÀY/NĂM GIỜ</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(x => x.NGAYTHANG, new { htmlAttributes = new { @id = "choosetime" } })
+                                                @Html.ValidationMessageFor(model => model.NGAYTHANG, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>IMAGE</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                @Html.LabelFor(model => model.HINHANH, new { @class = "form-control" })
+                                                <input type="file" name="HINHANHFile" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-theme start" value="Create">
+                            <i class="glyphicon glyphicon-save"></i>
+                            <span>SAVE</span>
+                        </button>
+                        <button type="button" class="btn btn-theme04 delete">
+                            <i class="glyphicon glyphicon-arrow-left"></i>
+                            <span>@Html.ActionLink("BACK", "TINTUCVIEW")</span>
+                        </button>
+                    </section>
+                </div>
+                <!-- /content-panel -->
+            </div>
+            <!-- /row -->
+        </section>
+        <!-- /wrapper -->
+    </section>
+}

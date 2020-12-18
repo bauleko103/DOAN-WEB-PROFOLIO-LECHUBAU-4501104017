@@ -1,0 +1,40 @@
+﻿@model IEnumerable<NATURALLIFE.Models.HOME>
+
+    @foreach (var item in Model)
+    {
+        <section aria-label="home" class="mainbg-paralax parallax-window" data-parallax="scroll" data-image-src="../ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANHNEN)" id="home">
+           
+            <!-- intro -->
+            <div class="container">
+                <div class="row">
+                    <div class="overlay-main-paralax v-align">
+                        <div class="col-md-10 col-xs-11">
+
+                            <h1 class="onStep" data-animation="animbouncefall" data-time="300">
+                                @Html.DisplayFor(modelItem => item.TUADE1)
+                            </h1>
+                            <div class="onStep" data-animation="fadeInUp" data-time="600" id="slidertext">
+                                <h3 class="main-text">
+                                    @Html.DisplayFor(modelItem => item.TUADE2)
+                                </h3>
+                                <h3 class="main-text">
+                                    @Html.DisplayFor(modelItem => item.TUADE3)
+                                </h3>
+
+                            </div>
+                            <div class="btn-content onStep" data-animation="fadeInUp" data-time="1200">
+                                <a href="#"> @Html.DisplayFor(modelItem => item.TENNUT)</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- intro end -->
+
+        </section>
+      
+    }
+
+

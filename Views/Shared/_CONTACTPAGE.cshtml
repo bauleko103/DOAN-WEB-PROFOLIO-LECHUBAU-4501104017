@@ -1,0 +1,29 @@
+﻿@model IEnumerable<NATURALLIFE.Models.LIENHE>
+
+@{
+    ViewBag.Title = "CONTACTPAGE";
+}
+
+
+
+    @foreach (var item in Model)
+     {
+        <div class="col-md-4 col-sm-6">
+            <h2>@Html.DisplayFor(modelItem => item.TUADE)</h2>
+
+            <!-- spacer -->
+            <div class="space-single"></div>
+
+            <div class="wrapaddres onStep" data-animation="fadeInUp" data-time="600">
+                <address>
+                    <span>@Html.DisplayFor(modelItem => item.ADDRESSS)</span>
+                    <span><strong>Phone :</strong>@Html.DisplayFor(modelItem => item.PHONE)</span>
+                    <span><strong>Fax :</strong>@Html.DisplayFor(modelItem => item.FAX)</span>
+                    <span><strong>Email :</strong> <a href="@Html.DisplayFor(modelItem => item.EMAIL)">@Html.DisplayFor(modelItem => item.EMAIL)</a></span>
+                    <span><strong>Website :</strong> <a href="@Html.DisplayFor(modelItem => item.WEB)">@Html.DisplayFor(modelItem => item.WEB)</a></span>
+                </address>
+            </div>
+        </div>
+        <!-- address end -->
+     }
+

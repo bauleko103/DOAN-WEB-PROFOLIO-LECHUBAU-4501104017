@@ -1,0 +1,24 @@
+﻿@model IEnumerable<NATURALLIFE.Models.TRANGMODEL>
+
+
+<div class="widget">
+    <h5>
+        Recent posts
+    </h5>
+
+    <div class="devider-widget">
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="recent">
+            <div>
+                <img alt="image" class="pull-left col-lg-6" src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)">
+                <a class="link col-lg-6" href="@Url.Action("MODELDETAIL1", new { id = item.ID })">
+                    @Html.DisplayFor(modelItem => item.TUADE)
+                 
+                </a>
+            </div>
+        </div>
+    }
+
+</div>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<NATURALLIFE.Models.PHOTO>
+
+@{
+    ViewBag.Title = "PHOTOVIEW";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+
+<section id="main-content">
+    <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i>TRANG PHOTO</h3>
+        <!-- BASIC FORM ELELEMNTS -->
+        <!-- row -->
+        <div class="col-lg-1">
+            <button class="btn btn-success btn-primary">
+                <i class="fa fa-check"></i>
+                @Html.ActionLink("ADD", "PHOTOADD")
+            </button>
+        </div>
+
+
+            <!-- /row -->
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-2">
+                    <div class="content-panel">
+                        <button class="btn btn-info btn-arrow">
+                            @Html.ActionLink("EDIT", "PHOTOEDIT", new { id = item.ID })
+                        </button>
+
+                        <button class="btn btn-danger btn-primary">
+                            <i class="fa fa-trash-o "></i>
+                            @Html.ActionLink("DEL", "PHOTODEL", new { id = item.ID })
+
+                        </button>
+
+                        <section id="unseen">
+                            <table class="table table-bordered table-striped table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td class="col-lg-2">VỊ TRÍ ẢNH</td>
+                                        <td class="col-lg-10">
+                                            <p> @Html.DisplayFor(modelItem => item.SOTHUTU)</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-lg-2">HÌNH ẢNH</td>
+                                        <td class="col-lg-10">
+                                            <img src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)" style="width:60px;">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                    <br />
+                </div>
+            }
+            <!-- /content-panel -->
+            <!-- /row -->
+    </section>
+    <!-- /wrapper -->
+</section>
+

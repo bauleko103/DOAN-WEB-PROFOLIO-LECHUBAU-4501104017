@@ -1,0 +1,96 @@
+﻿@model IEnumerable<NATURALLIFE.Models.MUCLINK>
+
+@{
+    ViewBag.Title = "SUBBODYVIEW";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+
+<section id="main-content">
+    <section class="wrapper">
+        <!-- BASIC FORM ELELEMNTS -->
+        <h3><i class="fa fa-angle-right"></i>TRANG LINK</h3>
+        <!-- row -->
+
+        <!--<div class="col-lg-6">
+            <div class="content-panel">
+                <div class="content-panel">
+                    <img src="~/Content/images-slider/img-slide-1.jpg" style="width:100%;" />
+                </div>-->
+                <!-- /content-panel -->
+            <!--</div>-->
+            <!-- /col-md-12 -->
+        <!--</div>-->
+        <!-- /row -->
+        <div class="col-lg-6">
+            <div class="content-panel">
+                <h4><i class="fa fa-dashboard"></i> Nội Dung LINK</h4>
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <button class="btn btn-success btn-primary">
+                                    <i class="fa fa-check"></i>
+                                    @Html.ActionLink("EDIT", "SUBBODYEDIT", new { id = item.ID })
+                                </button>
+                                <tr>
+                                    <td class="col-lg-2">PHONE</td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.PHONE)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">LINK FACEBOOK</td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.LINKFB)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">LINK PRINTEST</td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.LINKPRIN)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">LINK EMAIL</td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.EMAIL)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">LINK TWITTER</td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.LINKTWI)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">TITLE FOOTER</td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.LINKINS)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">LINK YOUTUBE</td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.LINKYB)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">LINK LINKEDIN</td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.LINKINK)</p>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <!-- /content-panel -->
+        </div>
+        <!-- /row -->
+        <!-- /row -->
+    </section>
+    <!-- /wrapper -->
+</section>

@@ -1,0 +1,130 @@
+﻿@model IEnumerable<NATURALLIFE.Models.TINTUC>
+
+
+@{
+    ViewBag.Title = "TINTUCVIEW";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+
+
+
+
+
+<section id="main-content">
+    <section class="wrapper">
+        
+        <h3><i class="fa fa-angle-right"></i>TRANG BÀI VIẾT</h3>
+        <div class="col-lg-6">
+            <div class="content-panel">
+                
+                <img src="~/ContentWebmaster/img/BLOGVIEW.png" style="width:100%;" />
+            </div>
+            <div style="margin:10px;">
+                <button class="btn btn-success btn-primary">
+                    <i class="fa fa-check"></i>
+                    @Html.ActionLink("ADD", "TINTUCADD")
+                </button>
+            </div>
+        </div>
+        <br />
+        @using (Html.BeginForm())
+        {
+            <table>
+                <tr>
+                    <td style="padding:10px;">
+                        @Html.DropDownList("IDTHELOAI", null, htmlAttributes: new { @class = "form-control" })
+                    </td>
+
+                    <td>
+                        <input type="submit" value="Tìm kiếm" />
+                    </td>
+                </tr>
+
+            </table>
+        }
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3" style="padding:10px">
+                <div class="content-panel">
+                    <section id="unseen">
+                        @*<button>@Html.CheckBox("isNewlyEnrolled", true)</button>*@
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td class="col-lg-2">CHỈNH SỬA</td>
+                                    <td class="col-lg-10">
+                                        <button class="btn btn-info btn-arrow" onclick="EDITFILE();" name="ok">
+                                            @Html.ActionLink("EDIT", "TINTUCEDIT", new { id = item.ID })
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">TIÊU ĐỀ </td>
+                                    <td class="col-lg-10">
+                                        <a href="@Url.Action("TINTUCCHITIET", new { id = item.ID })">
+                                            @Html.DisplayFor(modelItem => item.TIEUDE)
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-4">THỂ LOẠI TIN TỨC </td>
+                                    <td class="col-lg-8">
+                                        <p>@Html.DisplayFor(modelItem => item.THELOAITINTUC.TENTHELOAI)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">NỘI DUNG PHỤ </td>
+                                    <td class="col-lg-10">
+                                        @Html.Raw(item.NOIDUNGPHU)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">HÌNH ẢNH</td>
+                                    <td class="col-lg-10">
+                                        <img src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH)" style="width:60px;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                <!---nút xoá-->
+                <div class="showback">
+                    <!-- Button trigger modal -->
+                    <button class="btn btn-danger btn-primary" data-toggle="modal" data-target="#myModal">
+                        DELETE
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">
+                                        WARNING !
+                                    </h4>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you continue to delete this item?
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-danger btn-primary">
+                                        <i class="fa fa-trash-o "></i> @Html.ActionLink("DEL", "TINTUCDEL", new { id = item.ID })
+                                    </button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /kết thúc nút xoá -->
+            </div>
+            <br />
+        }
+
+        <!-- /row END -->
+    </section>
+    <!-- /wrapper -->
+</section>

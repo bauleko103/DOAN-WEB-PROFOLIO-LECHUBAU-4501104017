@@ -1,0 +1,92 @@
+﻿@model IEnumerable<NATURALLIFE.Models.LIENHE>
+@{
+    ViewBag.Title = "CONTACTVIEW";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <!-- BASIC FORM ELELEMNTS -->
+        <h3><i class="fa fa-angle-right"></i>TRANG LIÊN HỆ</h3>
+        <!-- row -->
+
+        <div class="col-lg-6">
+            <div class="content-panel">
+                
+                <img src="~/ContentWebmaster/img/CONTACTVIEW.png" style="width:100%;" />
+            </div>
+            <!-- /col-md-12 -->
+        </div>
+        <!-- /row -->
+        <div class="col-lg-6">
+            <div class="content-panel">
+                <h4><i class="fa fa-dashboard"></i> Nội Dung Liên HỆ</h4>
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <button class="btn btn-success btn-primary">
+                                    <i class="fa fa-check"></i>
+                                    @Html.ActionLink("EDIT", "CONTACTEDIT", new { id = item.ID })
+                                </button>
+                                <tr>
+                                    <td class="col-lg-2">TỰA ĐỀ LIÊN HỆ </td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.TUADE)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">ĐỊA CHỈ</td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.ADDRESSS)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">SỐ ĐIỆN THOẠI</td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.PHONE)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">FAX</td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.FAX)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">EMAIL</td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.EMAIL)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">WEB</td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.WEB)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">TỰA DỀ LIÊN HỆ (CHÂN TRANG) </td>
+                                    <td class="col-lg-10">
+                                        <p> @Html.DisplayFor(modelItem => item.TUADECHANTRANG)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">HOTLINE</td>
+                                    <td class="col-lg-10">
+                                        <p>@Html.DisplayFor(modelItem => item.HOTLINE)</p>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <!-- /content-panel -->
+        </div>
+        <!-- /row -->
+        <!-- /row -->
+    </section>
+    <!-- /wrapper -->
+</section>

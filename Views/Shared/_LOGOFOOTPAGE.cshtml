@@ -1,0 +1,20 @@
+﻿@model IEnumerable<NATURALLIFE.Models.CHANTRANG>
+@{
+    ViewBag.Title = "_LOGOFOOTPAGE";
+}
+
+
+
+@foreach (var item in Model)
+{
+
+    <div class="logo">
+        <img alt="logo" src="~/ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANHLOGO)">
+    </div>
+
+    <p>
+        @Html.Raw(item.NOIDUNG)
+    </p>
+}
+
+

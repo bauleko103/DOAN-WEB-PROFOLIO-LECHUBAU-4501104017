@@ -1,0 +1,122 @@
+﻿@model NATURALLIFE.Models.TAIKHOAN
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LOGIN</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/ContentWebmaster/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/ContentWebmaster/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/ContentWebmaster/css/style.css" rel="stylesheet">
+    <link href="~/ContentWebmaster/css/style-responsive.css" rel="stylesheet">
+</head>
+<body>
+
+    <body onload="getTime()">
+        <!-- **********************************************************************************************************************************************************
+            MAIN CONTENT
+            *********************************************************************************************************************************************************** -->
+        <div class="container">
+            <div id="showtime"></div>
+            <div class="col-lg-4 col-lg-offset-4">
+                <div class="lock-screen">
+                    <h2><a data-toggle="modal" href="#myModal"><i class="fa fa-lock"></i></a></h2>
+                    <p>UNLOCK</p>
+                    <!-- Modal -->
+                    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div id="login-div">
+                                    @using (Html.BeginForm("Login", "Webmaster", FormMethod.Post))
+                                    {
+                                        <div class="modal-body">
+                                            <div id="login-page">
+                                                <form class="form-login">
+                                                        <h2 class="form-login-heading">sign in now</h2>
+                                                        <div class="login-wrap">
+                                                            <div placeholder="User ID" autofocus>
+                                                                @Html.EditorFor(model => model.IDTAIKHOAN)
+                                                            </div>
+                                                            <br>
+                                                            <br>
+                                                            <div placeholder="User ID" autofocus>
+                                                                @Html.EditorFor(model => model.PASS)
+                                                            </div>
+                                                            <label class="checkbox">
+                                                                <input type="submit" name="name" value="Login" />
+                                                                
+                                                                <button class="btn-contact" id="send-contact" style="margin:10px;">
+                                                                    <span>@Html.ActionLink("BACK", "Index", "Home")</span>
+                                                                </button>
+                                                            </label>
+                                                           
+                                                            <hr>
+                                                        </div>
+                                                        <!-- Modal -->
+                                                        <!-- modal -->
+                                                </form>
+                                            </div>
+                                        </div>
+                                     }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal -->
+                </div>
+                <!-- /lock-screen -->
+            </div>
+            <!-- /col-lg-4 -->
+        </div>
+        <!-- /container -->
+
+    </body>
+    <script src="~/ContentWebmaster/lib/jquery/jquery.min.js"></script>
+    <script src="~/ContentWebmaster/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <script>
+        $.backstretch("img/login-bg.jpg", {
+            speed: 500
+        });
+    </script>
+    <script>
+        function getTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            // add a zero in front of numbers<10
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('showtime').innerHTML = h + ":" + m + ":" + s;
+            t = setTimeout(function () {
+                getTime()
+            }, 500);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+    <script src="~/ContentWebmaster/lib/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("img/login-bg.jpg", {
+            speed: 500
+        });
+    </script>
+    <script src="~/ContentWebmaster/lib/php-mail-form/validate.js"></script>
+</body>
+
+</html>

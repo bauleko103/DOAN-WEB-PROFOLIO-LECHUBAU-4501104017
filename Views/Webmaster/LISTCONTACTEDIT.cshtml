@@ -1,0 +1,57 @@
+﻿@model NATURALLIFE.Models.DSKHACHHANG
+
+@{
+    ViewBag.Title = "LISTCONTACTEDIT";
+    Layout = "~/Views/Shared/_Webmaster.cshtml";
+}
+
+@using (Html.BeginForm("LISTCONTACTEDIT", "Webmaster", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    Html.HiddenFor(model => model.ID);
+
+
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="col-lg-12">
+                <div class="content-panel">
+                    <h4><i class="fa fa-dashboard"></i>THÔNG TIN KHÁCH HÀNG</h4>
+
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td class="col-lg-2">TÊN KHÁCH HÀNG</td>
+                                    <td class="col-lg-10">
+                                        @Html.EditorFor(model => model.TENKH, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.TENKH, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-2">GMAIL</td>
+                                    <td class="col-lg-10">
+                                        @Html.EditorFor(model => model.GMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.GMAIL, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-theme start">
+                            <i class="glyphicon glyphicon-save"></i>
+                            <span>Save</span>
+                        </button>
+                        <button type="button" class="btn btn-theme04 delete">
+                            <i class="glyphicon glyphicon-arrow-left"></i>
+                            <span>@Html.ActionLink("BACK", "LISTCONTACTVIEW")</span>
+                        </button>
+                    </section>
+                </div>
+                <!-- /content-panel -->
+            </div>
+            <!-- /row -->
+        </section>
+        <!-- /wrapper -->
+    </section>
+    }
+

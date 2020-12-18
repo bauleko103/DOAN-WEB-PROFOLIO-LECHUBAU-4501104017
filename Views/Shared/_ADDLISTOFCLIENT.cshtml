@@ -1,0 +1,57 @@
+﻿@model NATURALLIFE.Models.DSKHACHHANG
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>DSKHACHHANG</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.ID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ID, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TENKH, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TENKH, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TENKH, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.GMAIL, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.GMAIL, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GMAIL, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <form action="#" class="row" id="form-contact" method="post" name="form-contact">
+        <input id="name-contact" name="name" placeholder="your name" type=@Html.EditorFor(model => model.ID, new { htmlAttributes = new { @class = "form-control" } })>
+        <input id="email-contact" name="email" placeholder="your e-mail" type="text">
+
+        <textarea cols="50" id="message-contact" name="message" placeholder="your enquiry" rows="4"></textarea>
+        <div class="success" id="mail_success">
+            Thank you. Your message has been sent
+        </div>
+
+        <div class="error" id="mail_failed">
+            Error, email not sent
+        </div>
+        <button class="btn-contact" id="send-contact" type="submit">Sent Now</button>
+    </form>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<NATURALLIFE.Models.THELOAITHUVIEN>
+
+
+        <div class="onStep" data-animation="fadeInUp" data-time="300">
+            <div class="filter-wraper text-center">
+                <ul id="filter-porto">
+                    <li class="filt-projects selected" data-project="*">
+                        ALL
+                    </li>
+                    @foreach (var item in Model)
+                    {
+                     <li class="filt-projects" data-project=".@Html.DisplayFor(modelItem => item.THELOAIANH)">
+                            @Html.DisplayFor(modelItem => item.THELOAIANH)
+                     </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    

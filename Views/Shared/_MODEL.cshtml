@@ -1,0 +1,33 @@
+﻿@model IEnumerable<NATURALLIFE.Models.TRANGMODEL>
+
+<div class="with-gutter">
+
+    <div class="onStep" data-animation="fadeInUp" data-time="300">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-md-6">
+                <div class="projects-home" style="background-image:url(../ContentWebmaster/img/@Html.DisplayFor(modelItem => item.HINHANH))">
+
+                    <div class="hovereffect">
+                        @*@Html.ActionLink("Details", "MODELDETAIL1", new { id = item.ID })*@
+                        <a href="@Url.Action("MODELDETAIL1", new { id = item.ID })">
+                            <div class="overlay v-align">
+                                <div class="content">
+                                    <span class="heading">@Html.DisplayFor(modelItem => item.TUADE)</span>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        }
+    </div>
+
+</div>
+

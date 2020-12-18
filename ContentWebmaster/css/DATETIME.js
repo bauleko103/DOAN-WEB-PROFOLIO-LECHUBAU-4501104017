@@ -1,0 +1,1 @@
+﻿$("#yourField").datepicker("option", "dateFormat", "mm/dd/yy");

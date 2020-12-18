@@ -1,0 +1,154 @@
+﻿@model NATURALLIFE.Models.TRANGMODEL
+
+@{
+    ViewBag.Title = "Model Detail";
+}
+    <header class="init">
+        <!-- subnav -->
+        <div class="subnav">
+            <div class="container">
+                <div class="row">
+
+                    @Html.Action("LINKPAGETOP")
+
+                </div>
+            </div>
+        </div>
+        <!-- subnav end -->
+     
+        <!-- nav -->
+        <div class="navbar-default-white navbar-fixed-top">
+            <!-- container -->
+            <div class="container">
+                <div class="row">
+
+                    <!-- menu mobile display -->
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- logo -->
+                    <a class="navbar-brand white" href="@Url.Action("Index","Home")">
+                        <img class="white" alt="logo" src="~/Content/img/LOGOWWHITE-01.png">
+                        <img class="black" alt="logo" src="~/Content/img/LOGOBIG-01.png">
+                    </a>
+                    <!-- logo end -->
+                    <!-- mainmenu start -->
+                    <div class="white menu-init" id="main-menu">
+                        <nav id="menu-center">
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Index","Home")#home">Home</a>
+                                </li>
+                                <!-- <li>
+                              <a href="#about-us-1">About</a>
+                            </li> -->
+                                <li>
+                                    <a class="actived" href="@Url.Action("Index","Home")#service">MODEL</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","Home")#projects">GALLARY</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","Home")#blog">BLOG</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","Home")#contact">CONTACT</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","Home")#brand">CLIENT</a>
+                                </li>
+                                <li>
+                                    <a class="btn-book-menu popup-form" href="@Url.Action("NHANTHONGTIN","Home")">BOOK NOW</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- mainmenu end -->
+
+                </div>
+            </div>
+            <!-- container end-->
+        </div>
+        <!-- nav end -->
+    </header>
+<!-- subheader -->
+<section id="subheader">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>
+                    @ViewBag.Title
+                </h1>
+            </div>
+
+            <!-- devider -->
+            <div class="col-md-12">
+                <div class="devider-page">
+                    <div class="devider-img-right">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <ul class="subdetail">
+                    <li>
+                        <a href="@Url.Action("Index","Home")#home">Home</a>
+                    </li>
+
+                    <li class="sep">
+                        /
+                    </li>
+
+                    <li>
+                        @ViewBag.Title
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- subheader end -->
+<!-- section -->
+<section aria-label="section-blogg" id="content">
+    <div class="container">
+        <div class="row">
+
+            <!-- left content -->
+            <div class="col-md-8">
+                <div class="onStep" data-animation="fadeInUp" data-time="300">
+
+                    <!-- article -->
+                    <article>
+                        <div class="post-image">
+                            <img class="img-responsive" src="~/ContentWebmaster/img/@Html.DisplayFor(model => model.HINHANH)" alt="blog-img" />
+                            <div class="post-heading">
+                                <h2> @Html.DisplayFor(model => model.TUADE)</h2>
+                            </div>
+
+
+                        </div>
+                        <p>
+                            @Html.Raw(Model.NOIDUNG)
+                        </p>
+                    </article>
+                    <!-- article end -->
+                </div>
+            </div>
+            <!-- left content end -->
+            <!-- right content -->
+            <div class="col-md-4">
+                <aside class="onStep" data-animation="fadeInUp" data-time="600">
+
+                    <!-- widget -->
+                    @Html.Action("RECENTPOSTMODEL")
+                    <!-- widget end -->
+                </aside>
+            </div>
+            <!-- right content end -->
+        </div>
+    </div>
+</section>
+<!-- section -->
